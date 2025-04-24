@@ -51,6 +51,10 @@ The simulation will display two side-by-side plots:
 
 The simulation uses the Runge-Kutta 4th-order method (through SciPy's `solve_ivp`) to numerically solve the coupled differential equations of motion for the three bodies. The gravitational force between any two bodies is calculated using Newton's law of universal gravitation.
 
+![image](https://github.com/user-attachments/assets/7188ec97-de42-4b51-ad3f-d8d2884aa6b4)
+
+![image](https://github.com/user-attachments/assets/05b7281e-2813-4f4c-91a8-083c2fdb4bd2)
+
 ## Physics Background
 
 In the three-body problem, we have three masses exerting gravitational forces on each other. The equations of motion are derived from Newton's laws and the gravitational force law:
