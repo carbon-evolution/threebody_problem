@@ -1,39 +1,24 @@
-# Three-Body Problem Simulation
+# Relativistic Three-Body Problem
 
-A Python-based simulation of the classical three-body gravitational problem in 3D space, using numerical integration methods.
-
-## Overview
-
-This project simulates the motion of three bodies under mutual gravitational attraction. It's a classic problem in physics that has no general analytical solution and exhibits chaotic behavior.
+A Python simulation of the Three-Body Problem that goes beyond Newtonian gravity to include **General Relativistic (GR)** effects.
 
 ## Features
 
-- 3D visualization of three-body trajectories
-- Configurable masses and initial velocities
-- Multiple simulation scenarios:
-  - Equal masses with balanced velocities
-  - Random masses with random velocities
-- Interactive 3D plots for trajectory analysis
+- **Relativistic Physics**: Uses the **Einstein-Infeld-Hoffmann (EIH)** approximation (1st Post-Newtonian order) to simulate time dilation, spatial curvature, and nonlinear gravity.
+- **Interactive 3D Plotting**: Zoom and pan around the trajectories using the mouse scroll wheel.
+- **Precession**: Observe orbital precession (like Mercury's perihelion advance) in hierarchical systems.
 
-## Requirements
+## Physics
 
-- Python 3.6+
-- NumPy
-- Matplotlib
-- SciPy
+This simulation solves the N-body equations of motion derived from the **Einstein Field Equations**:
 
-## Installation
+$$ G_{\mu\nu} = 8\pi G T_{\mu\nu} $$
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/yourusername/threebody-simulation.git
-   cd threebody-simulation
-   ```
+Instead of simple Newtonian forces ($F = GmM/r^2$), it calculates the relativistic acceleration:
 
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+$$ \mathbf{a} = \mathbf{a}_{Newtonian} + \mathbf{a}_{1PN} $$
+
+For a detailed explanation of the math and physics, see [RELATIVITY.md](RELATIVITY.md).
 
 ## Usage
 
@@ -50,10 +35,6 @@ The simulation will display two side-by-side plots:
 ## How It Works
 
 The simulation uses the Runge-Kutta 4th-order method (through SciPy's `solve_ivp`) to numerically solve the coupled differential equations of motion for the three bodies. The gravitational force between any two bodies is calculated using Newton's law of universal gravitation.
-
-![image](https://github.com/user-attachments/assets/7188ec97-de42-4b51-ad3f-d8d2884aa6b4)
-
-![image](https://github.com/user-attachments/assets/05b7281e-2813-4f4c-91a8-083c2fdb4bd2)
 
 ## Physics Background
 
